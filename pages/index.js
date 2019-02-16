@@ -4,7 +4,6 @@ import { Box, Button, FormField, Heading, TextInput } from 'grommet';
 
 const Home = () => {
 	const [submitted, setSubmitted] = useState(false);
-	console.log(submitted);
 
 	return (
 		<Box align="center">
@@ -28,7 +27,6 @@ const Home = () => {
 						if (!values.username) {
 							errors.username = 'required';
 						}
-						console.log(errors);
 
 						return errors;
 					}}
