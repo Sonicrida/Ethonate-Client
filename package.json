@@ -6,8 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "formik": "^1.5.0",
+    "grommet": "^2.4.0",
     "next": "^8.0.1",
     "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react-dom": "^16.8.2",
+    "styled-components": "^4.1.3"
   }
 }
