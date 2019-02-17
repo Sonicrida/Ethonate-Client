@@ -7,9 +7,18 @@ const Home = () => (
   <Box align="center">
     <Box margin="large" elevation="medium" pad="medium" round="medium">
       <Heading
+        textAlign="center"
         margin={{
           top: "0"
         }}
+      >
+        Ethonate
+      </Heading>
+      <Heading
+        margin={{
+          top: "0"
+        }}
+        level="2"
       >
         Create A Donation Page
       </Heading>
@@ -97,7 +106,6 @@ const Home = () => (
               direction="row"
               justify="between"
             >
-              <Button label="Cancel" />
               <Button type="submit" primary label="Create" />
             </Box>
           </form>

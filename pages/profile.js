@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { withRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 import EditForm from "../components/EditForm";
+import Link from "next/link";
 
 const Profile = withRouter(props => {
   const [phraseDisplay, setPhraseDisplay] = useState(true);
@@ -10,7 +11,10 @@ const Profile = withRouter(props => {
 
   return (
     <Box align="center">
-      <Box width="large" pad="small" align="end" margin="none">
+      <Box width="large" pad="small" align="end" margin="none" direction="row">
+        <Link href="/">
+          <Button label="Create" />
+        </Link>
         <Button label="Edit" onClick={() => setEditMode(!editMode)} />
       </Box>
       <Box
@@ -27,6 +31,14 @@ const Profile = withRouter(props => {
         </Heading>
         <Text>{props.address}</Text>
         <p>{props.description}</p>
+        <Button
+          primary
+          alignSelf="center"
+          href={`https://www.mycrypto.com/?to=${
+            props.address
+          }#send-transaction`}
+          label={`Donate to ${props.name} with MyCrypto`}
+        />
       </Box>
       <Collapsible open={phraseDisplay}>
         {props.passphrase && (
