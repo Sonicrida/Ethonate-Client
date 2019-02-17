@@ -32,7 +32,7 @@ const Home = () => (
           return errors;
         }}
         onSubmit={body => {
-          fetch("http://localhost:5000/insert", {
+          fetch("http://68.183.170.113:8080/insert", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
