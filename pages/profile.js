@@ -25,8 +25,20 @@ const Profile = withRouter(props => {
       </Box>
       <Collapsible open={phraseDisplay}>
         {props.passphrase && (
-          <Box elevation="medium" pad="medium" round="medium">
-            Passphrase
+          <Box
+            elevation="medium"
+            pad="small"
+            round="medium"
+            gap="small"
+            align="center"
+            background={{
+              color: "accent-1",
+              dark: false,
+              opacity: "strong"
+            }}
+          >
+            <strong>Save this passphrase to edit your profile later!</strong>
+            {props.passphrase}
             <Button onClick={() => setPhraseDisplay(false)} label="Close" />
           </Box>
         )}
