@@ -1,5 +1,5 @@
 {
-	"name": "ETH Donate",
+	"name": "Ethonate",
 	"version": 2,
 	"builds": [{ "src": "next.config.js", "use": "@now/next" }],
 	"routes": [{ "src": "/profile/(.+)", "dest": "/profile?username=$1" }, { "src": "/(.*)", "dest": "/$1" }]

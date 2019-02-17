@@ -1,5 +1,5 @@
 {
-  "name": "eth-donate",
+  "name": "ethonate",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
