@@ -27,6 +27,14 @@ const Profile = withRouter(props => {
         </Heading>
         <Text>{props.address}</Text>
         <p>{props.description}</p>
+        <Button
+          primary
+          alignSelf="center"
+          href={`https://www.mycrypto.com/?to=${
+            props.address
+          }#send-transaction`}
+          label={`Donate to ${props.name} with MyCrypto`}
+        />
       </Box>
       <Collapsible open={phraseDisplay}>
         {props.passphrase && (
