@@ -31,7 +31,22 @@ const Home = () => (
           return errors;
         }}
         onSubmit={body => {
-          fetch("http://68.183.170.113:8080/insert", { method: "POST", body });
+          fetch("http://localhost:5000/insert", {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+              "content-type": "application/json"
+            }
+          })
+            .then(response => response.json())
+            .then(
+              res => {
+                console.log(res);
+              },
+              error => {
+                console.log(error);
+              }
+            );
         }}
       >
         {({ values, errors, handleChange, handleSubmit, setFieldValue }) => (
