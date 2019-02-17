@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Collapsible, Button } from "grommet";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 import EditForm from "../components/EditForm";
@@ -8,6 +8,13 @@ import Link from "next/link";
 const Profile = withRouter(props => {
   const [phraseDisplay, setPhraseDisplay] = useState(true);
   const [editMode, setEditMode] = useState(false);
+  const [phrase, setPhrase] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("passphrase")) {
+      setPhrase(localStorage.getItem("passphrase"));
+    }
+  });
 
   return (
     <Box align="center">
@@ -41,7 +48,7 @@ const Profile = withRouter(props => {
         />
       </Box>
       <Collapsible open={phraseDisplay}>
-        {props.passphrase && (
+        {phrase && (
           <Box
             elevation="medium"
             pad="small"
@@ -55,13 +62,13 @@ const Profile = withRouter(props => {
             }}
           >
             <strong>Save this passphrase to edit your profile later!</strong>
-            {props.passphrase}
+            {phrase}
             <Button onClick={() => setPhraseDisplay(false)} label="Close" />
           </Box>
         )}
       </Collapsible>
       <Collapsible open={editMode}>
-        <EditForm props={props} />
+        <EditForm props={props} phrase={phrase}/>
       </Collapsible>
     </Box>
   );

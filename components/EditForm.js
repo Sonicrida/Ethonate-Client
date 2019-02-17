@@ -18,7 +18,7 @@ const EditForm = ({ props }) => {
           username: props.username,
           address: props.address,
           description: props.description,
-          passphrase: props.passphrase
+          passphrase: props.phrase
         }}
         validate={values => {
           const errors = {};
