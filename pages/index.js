@@ -30,9 +30,8 @@ const Home = () => (
 
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          alert("Submitting\n" + JSON.stringify(values, null, 2));
-          setSubmitting();
+        onSubmit={body => {
+          fetch("http://68.183.170.113:8080/insert", { method: "POST", body });
         }}
       >
         {({ values, errors, handleChange, handleSubmit, setFieldValue }) => (
