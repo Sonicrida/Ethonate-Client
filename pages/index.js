@@ -44,8 +44,9 @@ const Home = () => (
               res => {
                 console.log(res);
                 if (res.success) {
+                  localStorage.setItem("username", body.username);
+                  localStorage.setItem("passphrase", res.updateCode);
                   Router.push("/profile/" + body.username);
-                  // console.log(res.updateCode);
                 }
               },
               error => {
