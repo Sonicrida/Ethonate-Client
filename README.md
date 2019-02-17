@@ -1,4 +1,4 @@
-# [Ethonate Client](https://ethonate-ln8pajtz9.now.sh/)
+# [Ethonate Client](https://ethonate-kfpfy5fhe.now.sh/)
 Ethonate is an application for creating profiles to easily accept donations with Ethereum.
 ## Badge Examples
 ### Full
