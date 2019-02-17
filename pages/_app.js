@@ -17,7 +17,7 @@ const theme = {
 
 class MyApp extends App {
 	render() {
-		const { Component, pageProps, apolloClient } = this.props;
+		const { Component, pageProps } = this.props;
 		return (
 			<Container>
 				<Grommet full theme={theme}>
