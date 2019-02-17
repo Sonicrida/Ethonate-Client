@@ -24,6 +24,9 @@ const Home = () => (
           if (!values.username) {
             errors.username = "required";
           }
+          if (!values.description) {
+            errors.description = "required";
+          }
 
           return errors;
         }}
@@ -57,6 +60,13 @@ const Home = () => (
               <TextInput
                 name="username"
                 value={values.username || ""}
+                onChange={handleChange}
+              />
+            </FormField>
+            <FormField label="Description" error={errors.description}>
+              <TextInput
+                name="description"
+                value={values.description || ""}
                 onChange={handleChange}
               />
             </FormField>
