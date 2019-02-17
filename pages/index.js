@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { Box, Button, FormField, Heading, TextInput } from "grommet";
+import Router from "next/router";
 
 const Home = () => (
   <Box align="center">
@@ -42,6 +43,10 @@ const Home = () => (
             .then(
               res => {
                 console.log(res);
+                if (res.success) {
+                  Router.push("/profile/" + body.username);
+                  // console.log(res.updateCode);
+                }
               },
               error => {
                 console.log(error);
