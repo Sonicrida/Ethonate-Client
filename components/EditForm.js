@@ -42,7 +42,7 @@ const EditForm = ({ props }) => {
         }}
         onSubmit={body => {
           fetch("https://ethonate.com/update", {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify(body),
             headers: {
               "content-type": "application/json"
