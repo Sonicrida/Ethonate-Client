@@ -68,7 +68,7 @@ const Profile = withRouter(props => {
 });
 
 Profile.getInitialProps = async function({ query }) {
-  const res = await fetch("http://68.183.170.113:8080/data/" + query.username);
+  const res = await fetch("https://ethonate.com/data/" + query.username);
   const data = await res.json();
   if (!data.success) {
     return { name: "Profile Not Found" };

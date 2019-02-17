@@ -41,7 +41,7 @@ const EditForm = ({ props }) => {
           return errors;
         }}
         onSubmit={body => {
-          fetch("http://68.183.170.113:8080/update", {
+          fetch("https://ethonate.com/update", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
