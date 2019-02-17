@@ -1,15 +1,20 @@
 import { Box, Heading, Text, Collapsible, Button } from "grommet";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
+import EditForm from "../components/EditForm";
 
 const Profile = withRouter(props => {
   const [phraseDisplay, setPhraseDisplay] = useState(true);
+  const [editMode, setEditMode] = useState(false);
 
   return (
     <Box align="center">
+      <Box width="large" pad="small" align="end" margin="none">
+        <Button label="Edit" onClick={() => setEditMode(!editMode)} />
+      </Box>
       <Box
-        margin="large"
+        margin="medium"
         width="large"
         elevation="medium"
         pad="medium"
@@ -42,6 +47,9 @@ const Profile = withRouter(props => {
             <Button onClick={() => setPhraseDisplay(false)} label="Close" />
           </Box>
         )}
+      </Collapsible>
+      <Collapsible open={editMode}>
+        <EditForm props={props} />
       </Collapsible>
     </Box>
   );
